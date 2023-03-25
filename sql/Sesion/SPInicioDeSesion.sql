@@ -36,6 +36,7 @@ BEGIN
 	IF(@_filas_afectadas > 0)
 		BEGIN
 			SET @_filas_afectadas = 1
+			SET @_resultado = 1
 			COMMIT
 		END
 	ELSE
@@ -46,7 +47,7 @@ BEGIN
 		END
 	--devolver resultado
 	SELECT
-		IntResultado = @_resultado,
-		TxtToken = @_token,
-		TxtUsuario = @_usuario_id
+		resultado = @_resultado,
+		token = @_token,
+		usuario = @_usuario_id
 END

@@ -56,7 +56,6 @@ namespace Datos
                 Comando.Parameters.AddWithValue("@_id", Modelo.id);
                 Comando.Parameters.AddWithValue("@_nombre", Modelo.nombre);
                 Comando.Parameters.AddWithValue("@_usuario", Modelo.usuario);
-                Comando.Parameters.AddWithValue("@_contasenia", Funciones.SeguridadSHA512(Modelo.contasenia));
                 Comando.Parameters.AddWithValue("@_correo", Modelo.correo);
                 Comando.Parameters.AddWithValue("@_nacimiento", Modelo.nacimiento);
                 Comando.Parameters.AddWithValue("@_token", Modelo.token);

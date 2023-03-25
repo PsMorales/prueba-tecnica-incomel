@@ -1,0 +1,54 @@
+<!-- <ngx-spinner 
+    bdColor = "rgba(0,0,0,0.64)" 
+    size = "default" 
+    color = "#f01212" 
+    type = "ball-pulse" 
+    [fullScreen] = "true">
+</ngx-spinner> -->
+
+<body class="main-bg">
+    <div class="login-container text-c animated flipInX">
+        
+        <div class="center-block">
+            <h1 class="logo-badge text-whitesmoke">
+                <span class="fa fa-user-circle"></span>
+            </h1>
+        </div>
+
+        <!-- <h3 class="text-whitesmoke">Administradores</h3> -->
+        <p class="text-whitesmoke">Inicio de sesión</p>
+
+        <form [formGroup]="form" class="container-content">
+            <div class="margin-t">
+                <div class="form-group">
+
+                    <mat-form-field fxFlex="auto">
+                        <mat-label>Correo</mat-label>
+                        <input matInput formControlName="correo" name="correo" id="correo" 
+                            type="text" placeholder="Correo electronico" >
+                    </mat-form-field>
+
+                </div>
+                <div class="form-group">
+
+                    <mat-form-field fxFlex="auto">
+                        <mat-label>Correo</mat-label>
+                        <input matInput formControlName="contasenia" name="contasenia" id="contasenia" 
+                            [type]="hide ? 'password' : 'text'" placeholder="Contraseña" >
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+
+                </div>
+                <button (click)="inicioSesion()" [disabled]="!form.valid"
+                    class="form-button button-l margin-b">
+                    Iniciar sesión
+                </button>
+            </div>
+            <p class="margin-t text-whitesmoke">
+            </p>
+        </form>
+
+    </div>
+</body>

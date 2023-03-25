@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Web.Configuration;
 
 namespace Datos
 {
@@ -10,12 +12,13 @@ namespace Datos
     {
         private static DataTable DT = new DataTable();
         public string lblStatus = "";
-        private string CodigoDeSeguridad = "l&d0";
+        private string codigo_seguridad = "l&d0";
+        private static string dominio = WebConfigurationManager.AppSettings["Dominio"].ToString();
 
         public string SeguridadSHA512(string Pass)
         {
             System.Security.Cryptography.SHA512Managed HashTool = new System.Security.Cryptography.SHA512Managed();
-            Byte[] HashByte = Encoding.UTF8.GetBytes(string.Concat(Pass, CodigoDeSeguridad));
+            Byte[] HashByte = Encoding.UTF8.GetBytes(string.Concat(Pass, codigo_seguridad));
             Byte[] encryptedByte = HashTool.ComputeHash(HashByte);
             HashTool.Clear();
 
@@ -41,6 +44,18 @@ namespace Datos
         {
             SqlCommand Comando = Conexion.CrearComandoProc("Sesion.SPObtenerEstadoToken");
             Comando.Parameters.AddWithValue("@_token", token);
+
+            DT.Reset();
+            DT.Clear();
+
+            DT = Conexion.EjecutarComandoSelect(Comando);
+            return Convert.ToInt32(DT.Rows[0][0].ToString());
+        }
+
+        public static int ObtenerEstadoTokenContrasenia(string token)
+        {
+            SqlCommand Comando = Conexion.CrearComandoProc("Sesion.FnVerificarVigenciaTokenContrasenia");
+            Comando.Parameters.AddWithValue("@_token_contrasenia", token);
 
             DT.Reset();
             DT.Clear();
@@ -78,6 +93,29 @@ namespace Datos
                 }
             }
             return DT;
+        }
+
+        public void EnviarEmailContrasenia(string correo, int vigencia)
+        {
+            string email_origen = "";
+            string contrasenia = "";
+            
+            MailMessage mail_message = new MailMessage(email_origen, correo, "Recuperación de contraseña",
+                "<p>Correo para recuperación de contraseña</p>" + 
+                "<a href='"+ dominio + "'>Click para recuperar</a>" +
+                "<p>Este correo es valido por "+ vigencia + " minutos</p>"
+            );
+            mail_message.IsBodyHtml = true;
+
+            SmtpClient smpt_client = new SmtpClient("smtp.gmail.com");
+            smpt_client.EnableSsl = true;
+            smpt_client.UseDefaultCredentials = false;
+            smpt_client.Port = 587;
+            smpt_client.Credentials = new System.Net.NetworkCredential(email_origen, contrasenia);
+
+            smpt_client.Send(mail_message);
+
+            smpt_client.Dispose();
         }
     }
 }

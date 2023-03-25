@@ -10,3 +10,9 @@ C:\Users\luisp\Documents\Proyectos\muni\BackEnd\Modelos\obj\Debug\Modelos.csproj
 C:\Users\luisp\Documents\Proyectos\muni\BackEnd\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\luisp\Documents\Proyectos\muni\BackEnd\Modelos\obj\Debug\Modelos.dll
 C:\Users\luisp\Documents\Proyectos\muni\BackEnd\Modelos\obj\Debug\Modelos.pdb
+C:\Users\luisp\Documents\Proyectos\prueba-tecnica-incomel\BackEnd\Modelos\bin\Debug\Modelos.dll
+C:\Users\luisp\Documents\Proyectos\prueba-tecnica-incomel\BackEnd\Modelos\bin\Debug\Modelos.pdb
+C:\Users\luisp\Documents\Proyectos\prueba-tecnica-incomel\BackEnd\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+C:\Users\luisp\Documents\Proyectos\prueba-tecnica-incomel\BackEnd\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\luisp\Documents\Proyectos\prueba-tecnica-incomel\BackEnd\Modelos\obj\Debug\Modelos.dll
+C:\Users\luisp\Documents\Proyectos\prueba-tecnica-incomel\BackEnd\Modelos\obj\Debug\Modelos.pdb

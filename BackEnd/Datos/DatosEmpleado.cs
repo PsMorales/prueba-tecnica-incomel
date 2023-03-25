@@ -7,8 +7,6 @@ namespace Datos
 {
     public class DatosEmpleado
     {
-        private static readonly Funciones Funciones = new Funciones();
-        private static readonly int vigencia_minutos = 90;
         private static DataTable DT = new DataTable();
         private static int Estado = 0;
 
@@ -50,14 +48,13 @@ namespace Datos
             // 0 expirado, 1 vigente
             if (Estado == 1)
             {
-                SqlCommand Comando = Conexion.CrearComandoProc("Sesion.SPActualizarEmpleado");
+                SqlCommand Comando = Conexion.CrearComandoProc("dbo.SPActualizarEmpleado");
                 Comando.Parameters.AddWithValue("@_id", Modelo.id);
                 Comando.Parameters.AddWithValue("@_nombre_completo", Modelo.nombre_completo);
                 Comando.Parameters.AddWithValue("@_dpi", Modelo.dpi);
                 Comando.Parameters.AddWithValue("@_cantidad_hijos", Modelo.cantidad_hijos);
                 Comando.Parameters.AddWithValue("@_salario_base", Modelo.salario_base);
                 Comando.Parameters.AddWithValue("@_bono_decreto", Modelo.bono_decreto);
-                Comando.Parameters.AddWithValue("@_modificado_el", DateTime.Now.ToString("dd/MM/yyyy"));
                 Comando.Parameters.AddWithValue("@_token", Modelo.token);
 
                 DT = Conexion.EjecutarComandoSelect(Comando);
@@ -80,7 +77,7 @@ namespace Datos
             // 0 expirado, 1 vigente
             if (Estado == 1)
             {
-                SqlCommand Comando = Conexion.CrearComandoProc("Sesion.SPObtenerEmpleado");
+                SqlCommand Comando = Conexion.CrearComandoProc("dbo.SPObtenerEmpleados");
 
                 DT = Conexion.EjecutarComandoSelect(Comando);
                 DT = Funciones.AgregarEstadoToken(DT, Estado.ToString());
@@ -102,7 +99,7 @@ namespace Datos
             // 0 expirado, 1 vigente
             if (Estado == 1)
             {
-                SqlCommand Comando = Conexion.CrearComandoProc("Sesion.SPObtenerDatosEmpleado");
+                SqlCommand Comando = Conexion.CrearComandoProc("dbo.SPObtenerDatosEmpleado");
                 Comando.Parameters.AddWithValue("@_id", Modelo.id);
 
                 DT = Conexion.EjecutarComandoSelect(Comando);
@@ -125,7 +122,7 @@ namespace Datos
             // 0 expirado, 1 vigente
             if (Estado == 1)
             {
-                SqlCommand Comando = Conexion.CrearComandoProc("Sesion.SPEliminarEmpleado");
+                SqlCommand Comando = Conexion.CrearComandoProc("dbo.SPEliminarEmpleado");
                 Comando.Parameters.AddWithValue("@_id", Modelo.id);
 
                 DT = Conexion.EjecutarComandoSelect(Comando);

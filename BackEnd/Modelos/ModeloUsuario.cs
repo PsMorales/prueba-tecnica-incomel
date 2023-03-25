@@ -12,6 +12,9 @@
         public string modificado_el { get; set; }
         public string agregado_por { get; set; }
         public string modificado_por { get; set; }
+        public string token_contrasenia { get; set; }
+        public string agregado_token_contrasenia { get; set; }
+        public int tiempo_token_contrasenia { get; set; }
         public int esado { get; set; }
     }
 }

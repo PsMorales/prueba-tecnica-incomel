@@ -18,3 +18,13 @@ C:\Users\luisp\Documents\Proyectos\muni\BackEnd\Datos\obj\Debug\Datos.csproj.Cor
 C:\Users\luisp\Documents\Proyectos\muni\BackEnd\Datos\obj\Debug\Datos.csproj.CopyComplete
 C:\Users\luisp\Documents\Proyectos\muni\BackEnd\Datos\obj\Debug\Datos.dll
 C:\Users\luisp\Documents\Proyectos\muni\BackEnd\Datos\obj\Debug\Datos.pdb
+C:\Users\luisp\Documents\Proyectos\prueba-tecnica-incomel\BackEnd\Datos\bin\Debug\Datos.dll.config
+C:\Users\luisp\Documents\Proyectos\prueba-tecnica-incomel\BackEnd\Datos\bin\Debug\Datos.dll
+C:\Users\luisp\Documents\Proyectos\prueba-tecnica-incomel\BackEnd\Datos\bin\Debug\Datos.pdb
+C:\Users\luisp\Documents\Proyectos\prueba-tecnica-incomel\BackEnd\Datos\bin\Debug\Modelos.dll
+C:\Users\luisp\Documents\Proyectos\prueba-tecnica-incomel\BackEnd\Datos\bin\Debug\Modelos.pdb
+C:\Users\luisp\Documents\Proyectos\prueba-tecnica-incomel\BackEnd\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+C:\Users\luisp\Documents\Proyectos\prueba-tecnica-incomel\BackEnd\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\luisp\Documents\Proyectos\prueba-tecnica-incomel\BackEnd\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\luisp\Documents\Proyectos\prueba-tecnica-incomel\BackEnd\Datos\obj\Debug\Datos.dll
+C:\Users\luisp\Documents\Proyectos\prueba-tecnica-incomel\BackEnd\Datos\obj\Debug\Datos.pdb

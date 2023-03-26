@@ -1,7 +1,6 @@
 import { Router } from '@angular/router';
 import { SesionService } from './../../services/sesion.service';
-import { UsuariosService } from './../../services/usuarios.service';
-import { Inicio, Usuario } from './../../models/modelos';
+import { Inicio } from './../../models/modelos';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 

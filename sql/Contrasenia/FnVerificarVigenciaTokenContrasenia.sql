@@ -3,7 +3,7 @@ CREATE FUNCTION dbo.FnVerificarVigenciaTokenContrasenia( @_token_contrasenia NVA
 RETURNS TINYINT
 AS
 BEGIN
-	DECLARE @_resultado TINYINT, @_vigencia_minutos INT = 30, @_creacion DATETIME = '2001-01-01 01:01:01.001', 
+	DECLARE @_resultado TINYINT, @_vigencia_minutos INT = 5, @_creacion DATETIME = '2001-01-01 01:01:01.001', 
 			@_fecha_actual DATETIME = getDate(), @_tiempo_minutos INT
 	SELECT
 		@_vigencia_minutos = a.tiempo_token_contrasenia,

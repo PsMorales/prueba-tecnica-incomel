@@ -1,1 +1,49 @@
-<p>recuperar-contrasenia works!</p>
+<!-- <ngx-spinner 
+    bdColor = "rgba(0,0,0,0.64)" 
+    size = "default" 
+    color = "#f01212" 
+    type = "ball-pulse" 
+    [fullScreen] = "true">
+</ngx-spinner> -->
+
+<body class="main-bg">
+    <div class="login-container text-c animated flipInX">
+        
+        <div class="center-block">
+            <h1 class="logo-badge text-whitesmoke">
+                <span class="fa fa-user-circle"></span>
+            </h1>
+        </div>
+
+        <!-- <h3 class="text-whitesmoke">Administradores</h3> -->
+        <p class="text-whitesmoke">Cambio de Contraseña</p>
+
+        <form [formGroup]="form" class="container-content">
+            <div class="margin-t">
+                <div class="form-group">
+
+                    <input formControlName="contasenia2" name="contasenia2" id="contasenia2" 
+                        [type]="hide ? 'password' : 'text'" placeholder="Contraseña" class="form-control">
+
+                </div>
+                <div class="form-group">
+
+                    <input formControlName="contasenia" name="contasenia" id="contasenia" 
+                        [type]="hide ? 'password' : 'text'" placeholder="Contraseña" class="form-control">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+
+                </div>
+                <button (click)="acualizar()" [disabled]="form.invalid"
+                    class="form-button button-l margin-b">
+                    Cambiar
+                </button>
+            </div>
+            <p class="margin-t text-whitesmoke">
+                <a (click)="regresar()">Regresar</a>
+            </p>
+        </form>
+
+    </div>
+</body>

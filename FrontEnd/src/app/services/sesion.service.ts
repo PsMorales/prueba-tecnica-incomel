@@ -1,6 +1,6 @@
 import { environment } from './../../environments/environment';
 import { Observable } from 'rxjs';
-import { Inicio, RegistroInicio, Recuperar, Usuario } from './../models/modelos';
+import { Inicio, RegistroInicio, Recuperar, Usuario, Cambio } from './../models/modelos';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import Swal from 'sweetalert2'
@@ -49,9 +49,9 @@ export class SesionService {
     return this.HttpClient.post<Array<any>>(url, recuperar); 
   }
 
-  cambiarContrasenia(usuario: Usuario): Observable<Array<RegistroInicio>>{
+  cambiarContrasenia(cambio: Cambio): Observable<Array<any>>{
     const url = `${environment.AUTH_SERVER}cambiar-contrasenia`;
-    return this.HttpClient.post<Array<RegistroInicio>>(url, usuario); 
+    return this.HttpClient.post<Array<any>>(url, cambio); 
   }
 
   getToken(): RegistroInicio{

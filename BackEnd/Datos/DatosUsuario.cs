@@ -166,7 +166,7 @@ namespace Datos
 
             DT = Conexion.EjecutarComandoSelect(Comando);
             DT = Funciones.AgregarEstadoToken(DT, Estado.ToString());
-            if (DT.Rows.Count > 0)
+            if (Convert.ToInt32(DT.Rows[0][0].ToString()) == 1)
             {
                 Funciones.EnviarEmailContrasenia(Modelo.correo, vigencia, token);
             }

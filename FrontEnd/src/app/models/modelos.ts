@@ -162,6 +162,25 @@ export class Recuperar implements IRecuperar{
 }
 
 
+export interface ICambio{
+    token_contrasenia: String;
+    contasenia: string;
+    contasenia2: string;
+}
+
+export class Cambio implements ICambio{
+    token_contrasenia: String;
+    contasenia: string;
+    contasenia2: string;
+
+    constructor(){
+        this.token_contrasenia = '';
+        this.contasenia = '';
+        this.contasenia2 = '';
+    }
+}
+
+
 export interface IRegistroInicio{
     resultado: number;
     token: string;

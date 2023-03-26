@@ -54,7 +54,7 @@ namespace Datos
 
         public static int ObtenerEstadoTokenContrasenia(string token)
         {
-            SqlCommand Comando = Conexion.CrearComandoProc("dbo.FnVerificarVigenciaTokenContrasenia");
+            SqlCommand Comando = Conexion.CrearComandoProc("dbo.SPObtenerEstadoTokenContrasenia");
             Comando.Parameters.AddWithValue("@_token_contrasenia", token);
 
             DT.Reset();

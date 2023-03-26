@@ -38,9 +38,7 @@ export class OlvideContraseniaComponent implements OnInit {
     if(this.form.valid){
       this.sesionService.emailRecuperarContrasenia(this.recupera).subscribe(
         result => {
-          console.log("esulado =>",result);
           if(result.length > 0 && result[0].Resultado === 1){
-            console.log("entro");
             this.sesionService.alert('success','Mensaje Enviado');
           }
           else{

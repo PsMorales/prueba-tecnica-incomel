@@ -41,7 +41,6 @@ export class ListarUsuariosComponent implements OnInit {
   }
 
   cargarInformacion(){
-    
     this.usuariosService.obtenerUsuarios({
       token: this.sesion_inicio.token
     }).subscribe(
@@ -75,7 +74,6 @@ export class ListarUsuariosComponent implements OnInit {
             (resultado: any) =>{
             if(resultado !== 0){
               if(resultado[0].EstadoToken !== '0'){
-                // this.Mensaje(`Usuario '${servicio.TxtServicio}' eliminado`, 2, 1, 3);
                 this.sesionService.alert('success', `Usuario '${usuario.usuario}' eliminado`);
                 this.cargarInformacion();
               }

@@ -1,4 +1,4 @@
-CREATE PROC dbo.SPObtenerEmpleado(@_id NVARCHAR(40))
+CREATE PROC dbo.SPObtenerDatosEmpleado(@_id NVARCHAR(40))
 AS
 BEGIN
 	SELECT

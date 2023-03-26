@@ -22,7 +22,7 @@ export class ListarEmpleadosComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   displayedColumns: string[] = [
-    'nombre', 'usuario', 'correo', 'nacimiento', 'agregado_el', 'acciones'
+    'nombre_completo', 'cantidad_hijos', 'salario_base', 'bono_decreto', 'agregado_el', 'acciones'
   ];
 
   constructor(
@@ -30,9 +30,12 @@ export class ListarEmpleadosComponent implements OnInit {
     private sesionService: SesionService,
     private router: Router,
     public dialogo: MatDialog,
-  ) { }
+  ) {
+    this.dataSource = new MatTableDataSource();
+  }
 
   ngOnInit(): void {
+    this.sesion_inicio = this.sesionService.getToken();
     this.cargarInformacion();
   }
 
@@ -41,7 +44,7 @@ export class ListarEmpleadosComponent implements OnInit {
       token: this.sesion_inicio.token
     }).subscribe(
       (resultado: any) => {
-        if(resultado[0].EstadoToken !== '0'){
+        if(resultado[0].EstadoToken !== 0){
           this.dataSource.data = resultado as Empleado[];
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;

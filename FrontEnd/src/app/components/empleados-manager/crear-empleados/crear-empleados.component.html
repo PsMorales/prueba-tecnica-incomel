@@ -1,1 +1,137 @@
-<p>crear-empleados works!</p>
+<div class="formulario">
+    <div class="main-content" >
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="">
+
+                        <div class="header" *ngIf="empleado_id">
+                            <h4 class="title">Actualizar Empleado {{ empleado.nombre_completo }}</h4>
+                        </div>
+                        <div class="header" *ngIf="!empleado_id">
+                            <h4 class="title">Agregar nuevo Empleado</h4>
+                        </div>
+
+                    </div>
+                    <form [formGroup]="form" class="content">
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <mat-form-field appearance="fill" class="input">
+                                        <mat-label>Nombre Completo</mat-label>
+                                        <input matInput formControlName="nombre_completo" name="nombre_completo" id="nombre_completo" 
+                                            type="text" placeholder="Nombre Completo" required>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <mat-form-field appearance="fill" class="input">
+                                        <mat-label>DPI</mat-label>
+                                        <input matInput formControlName="dpi" name="dpi" id="dpi" 
+                                            type="text" placeholder="DPI" required>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <mat-form-field appearance="fill" class="input">
+                                        <mat-label>Cantidad De Hijos</mat-label>
+                                        <input matInput formControlName="cantidad_hijos" name="cantidad_hijos" id="cantidad_hijos" 
+                                            type="number" placeholder="Canidad De Hijos" required>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <mat-form-field appearance="fill" class="input">
+                                        <mat-label>Salario Base</mat-label>
+                                        <input matInput formControlName="salario_base" name="salario_base" id="salario_base" 
+                                            type="text" placeholder="Salario Base" required (input)="calcularTotales()">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <mat-form-field appearance="fill" class="input">
+                                        <mat-label>Bono Decreto</mat-label>
+                                        <input matInput formControlName="bono_decreto" name="bono_decreto" id="bono_decreto"
+                                            type="text" placeholder="Contraseña" disabled>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <mat-form-field appearance="fill" class="input">
+                                        <mat-label>IGSS</mat-label>
+                                        <input matInput formControlName="igss" name="igss" id="igss" 
+                                            type="text" placeholder="IGSS" disabled>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <mat-form-field appearance="fill" class="input">
+                                        <mat-label>IRTRA</mat-label>
+                                        <input matInput formControlName="irtra" name="irtra" id="irtra" 
+                                            type="text" placeholder="IRTRA" disabled>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <mat-form-field appearance="fill" class="input">
+                                        <mat-label>Bono de paternidad</mat-label>
+                                        <input matInput formControlName="bono_paternidad" name="bono_paternidad" id="bono_paternidad" 
+                                            type="text" placeholder="Bono de paternidad" disabled>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <mat-form-field appearance="fill" class="input">
+                                        <mat-label>Salario Total</mat-label>
+                                        <input matInput formControlName="salario_total" name="salario_total" id="salario_total" 
+                                            type="text" placeholder="Salario Total" disabled>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <mat-form-field appearance="fill" class="input">
+                                        <mat-label>Salario Liquido</mat-label>
+                                        <input matInput formControlName="salario_liquido" name="salario_liquido" id="salario_liquido" 
+                                            type="text" placeholder="Salario Liquido" disabled>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-info btn-fill pull-right" (click)="enviarFormulario()" [disabled]="form.invalid">
+                            <i class="fas fa-upload"></i>
+                            Guardar
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,6 @@
-import { RegistroInicio } from './../models/modelos';
+import { environment } from './../../environments/environment';
+import { Observable } from 'rxjs';
+import { Inicio, RegistroInicio } from './../models/modelos';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import Swal from 'sweetalert2'
@@ -35,6 +37,11 @@ export class SesionService {
       icon: icon,
       title: title
     })
+  }
+
+  ServerInicioDeSesion(inicio: Inicio): Observable<Array<RegistroInicio>>{
+    const url = `${environment.AUTH_SERVER}inicio-sesion`;
+    return this.HttpClient.post<Array<RegistroInicio>>(url, inicio); 
   }
 
   getToken(){

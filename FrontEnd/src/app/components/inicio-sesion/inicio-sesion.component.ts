@@ -20,7 +20,6 @@ export class InicioSesionComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private usuariosService: UsuariosService,
     private sesionService: SesionService,
     private router: Router,
   ) {
@@ -38,7 +37,7 @@ export class InicioSesionComponent implements OnInit {
   inicioSesion(){
     this.inicio = this.form.value as Inicio;
     if(this.form.valid){
-      this.usuariosService.ServerInicioDeSesion(this.inicio).subscribe(
+      this.sesionService.ServerInicioDeSesion(this.inicio).subscribe(
         result => {
           if(result.length > 0 && result[0].resultado === 1){
             this.sesionService.AlmacenarSessionStorage(result[0]);
@@ -47,8 +46,11 @@ export class InicioSesionComponent implements OnInit {
             this.sesionService.intentoDeAcceso = '';
             this.router.navigate([this.routerRedirect]);
           }
+        },
+        error =>{
+          this.sesionService.alert('warning',"Ha ocurrido algun error inesperado");
         }
-      )
+      );
     }
     else{
       this.sesionService.alert('warning',"Por favor completar todos los campos");

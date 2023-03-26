@@ -13,8 +13,5 @@ export class UsuariosService {
     private HttpClient: HttpClient
   ) { }
 
-  ServerInicioDeSesion(inicio: Inicio): Observable<Array<RegistroInicio>>{
-    const url = `${environment.AUTH_SERVER}inicio-sesion`;
-    return this.HttpClient.post<Array<RegistroInicio>>(url, inicio); 
-  }
+  
 }

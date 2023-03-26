@@ -1,21 +1,17 @@
 import { Routes } from '@angular/router';
 
-import { HomeComponent } from '../../home/home.component';
-// import { UserComponent } from '../../user/user.component';
-// import { TablesComponent } from '../../tables/tables.component';
-// import { TypographyComponent } from '../../typography/typography.component';
-// import { IconsComponent } from '../../icons/icons.component';
-// import { MapsComponent } from '../../maps/maps.component';
-// import { NotificationsComponent } from '../../notifications/notifications.component';
-// import { UpgradeComponent } from '../../upgrade/upgrade.component';
+// import { HomeComponent } from '../../home/home.component';
+import { CrearEmpleadosComponent } from './../../components/empleados-manager/crear-empleados/crear-empleados.component';
+import { ListarEmpleadosComponent } from './../../components/empleados-manager/listar-empleados/listar-empleados.component';
+import { CrearUsuariosComponent } from './../../components/usuarios-manager/crear-usuarios/crear-usuarios.component';
+import { ListarUsuariosComponent } from './../../components/usuarios-manager/listar-usuarios/listar-usuarios.component';
+import { PalindromosComponent } from './../../components/palindromos/palindromos.component'
 
 export const AdminLayoutRoutes: Routes = [
-    { path: 'dashboard',      component: HomeComponent },
-    // { path: 'user',           component: UserComponent },
-    // { path: 'table',          component: TablesComponent },
-    // { path: 'typography',     component: TypographyComponent },
-    // { path: 'icons',          component: IconsComponent },
-    // { path: 'maps',           component: MapsComponent },
-    // { path: 'notifications',  component: NotificationsComponent },
-    // { path: 'upgrade',        component: UpgradeComponent },
+    // { path: 'dashboard',      component: HomeComponent },
+    { path: 'listar-usuarios',      component: ListarUsuariosComponent },
+    { path: 'usuarios/:id',      component: CrearUsuariosComponent },
+    { path: 'listar-empleados',      component: ListarEmpleadosComponent },
+    { path: 'empleados/:id',      component: CrearEmpleadosComponent },
+    { path: 'palindromos',      component: PalindromosComponent },
 ];

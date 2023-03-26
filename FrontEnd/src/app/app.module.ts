@@ -1,5 +1,5 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
@@ -21,9 +21,12 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 
+// import { NgxSpinnerModule } from "ngx-spinner";
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
+    // NgxSpinnerModule,
     FormsModule,
     RouterModule,
     HttpClientModule,
@@ -45,6 +48,9 @@ import {MatInputModule} from '@angular/material/input';
     RecuperarContraseniaComponent,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class AppModule { }

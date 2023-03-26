@@ -10,14 +10,12 @@ import { NguiMapModule} from '@ngui/map';
 import { AdminLayoutRoutes } from './admin-layout.routing';
 
 // COMPONENTES
-import { HomeComponent } from '../../home/home.component';
+// import { HomeComponent } from '../../home/home.component';
 import { PalindromosComponent } from './../../components/palindromos/palindromos.component';
 import { CrearEmpleadosComponent } from './../../components/empleados-manager/crear-empleados/crear-empleados.component';
 import { ListarEmpleadosComponent } from './../../components/empleados-manager/listar-empleados/listar-empleados.component';
-import { EmpleadosManagerComponent } from './../../components/empleados-manager/empleados-manager.component';
 import { CrearUsuariosComponent } from './../../components/usuarios-manager/crear-usuarios/crear-usuarios.component';
 import { ListarUsuariosComponent } from './../../components/usuarios-manager/listar-usuarios/listar-usuarios.component';
-import { UsuariosManagerComponent } from './../../components/usuarios-manager/usuarios-manager.component';
 
 
 
@@ -31,11 +29,11 @@ import { UsuariosManagerComponent } from './../../components/usuarios-manager/us
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'})
   ],
   declarations: [
-    HomeComponent,
-    UsuariosManagerComponent,
+    // HomeComponent,
+    // UsuariosManagerComponent,
     ListarUsuariosComponent,
     CrearUsuariosComponent,
-    EmpleadosManagerComponent,
+    // EmpleadosManagerComponent,
     ListarEmpleadosComponent,
     CrearEmpleadosComponent,
     PalindromosComponent,

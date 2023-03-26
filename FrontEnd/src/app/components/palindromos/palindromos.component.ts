@@ -26,15 +26,32 @@ export class PalindromosComponent implements OnInit {
     this.palabras = [];
     var palabra = this.form.get('palaba').value;
 
-    for(var i = 0; i <= palabra.length; i++){
-      for(var j = palabra.length; j >= i; j--){
-        this.agregarPalindromo(palabra.substr(i,j));
-      }
+    if(palabra.includes(' ')){
+      let arr = palabra.split(' ');
+      this.palindromoPalabra(arr);
+      this.cantidad = this.palabras.length;
     }
-
-    this.repetidos();
+    else{
+      for(var i = 0; i <= palabra.length; i++){
+        for(var j = palabra.length; j >= i; j--){
+          this.agregarPalindromo(palabra.substr(i,j));
+        }
+      }
+  
+      this.repetidos();
+    }
   }
 
+  palindromoPalabra(arreglos: string[]){
+    for(let arreglo of arreglos){
+      var re = /[\W_]/g;
+      var lowRegStr = arreglo.toLowerCase().replace(re, '');
+      var reverseStr = lowRegStr.split('').reverse().join(''); 
+      if(reverseStr === lowRegStr){
+        this.palabras.splice(0, 0, arreglo);
+      }
+    }
+  }
 
   agregarPalindromo(str) {
     var lowRegStr = str.toLowerCase();

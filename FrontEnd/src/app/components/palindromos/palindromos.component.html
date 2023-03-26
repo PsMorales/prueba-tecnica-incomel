@@ -1,1 +1,41 @@
-<p>palindromos works!</p>
+<div class="formulario">
+    <div class="main-content" >
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="">
+
+                        <div class="header">
+                            <h4 class="title">Palindromos</h4>
+                        </div>
+
+                    </div>
+                    <form [formGroup]="form" class="content">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <mat-form-field appearance="fill" class="input">
+                                        <mat-label>Palabra</mat-label>
+                                        <input matInput formControlName="palaba" name="palaba" id="palaba" 
+                                            type="text" placeholder="Palabra" (change)="calcularPalindromos()">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <h4>Palindromos: <strong>{{cantidad}}</strong></h4>
+
+                    <div *ngIf="cantidad > 0">
+                        <div *ngFor="let palabra of palabras">
+                            {{ palabra }}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

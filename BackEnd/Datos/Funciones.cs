@@ -95,14 +95,14 @@ namespace Datos
             return DT;
         }
 
-        public void EnviarEmailContrasenia(string correo, int vigencia)
+        public void EnviarEmailContrasenia(string correo, int vigencia, string token)
         {
-            string email_origen = "";
-            string contrasenia = "";
+            string email_origen = "the.mandaorian5646@gmail.com";
+            string contrasenia = "ksvrwvkahhcdebte";
             
             MailMessage mail_message = new MailMessage(email_origen, correo, "Recuperación de contraseña",
                 "<p>Correo para recuperación de contraseña</p>" + 
-                "<a href='"+ dominio + "'>Click para recuperar</a>" +
+                "<a href='"+ dominio + "/cambio-contrasenia/" + token + "'>Click para recuperar</a>" +
                 "<p>Este correo es valido por "+ vigencia + " minutos</p>"
             );
             mail_message.IsBodyHtml = true;

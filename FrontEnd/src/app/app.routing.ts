@@ -1,3 +1,5 @@
+import { OlvideContraseniaComponent } from './components/olvide-contrasenia/olvide-contrasenia.component';
+import { RecuperarContraseniaComponent } from './components/recuperar-contrasenia/recuperar-contrasenia.component';
 import { CanActivateGuard } from './guards/can-activate.guard';
 import { PaginaNoEncontradaComponent } from './components/pagina-no-encontrada/pagina-no-encontrada.component';
 import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
@@ -18,6 +20,8 @@ const routes: Routes =[
   },
   { path: 'inicio', component: InicioSesionComponent},
   { path: '404', component: PaginaNoEncontradaComponent},
+  { path: 'recuperar', component: OlvideContraseniaComponent},
+  { path: 'cambio-contrasenia/:token', component: RecuperarContraseniaComponent},
   { path: '**', redirectTo: '404' }
 ];
 

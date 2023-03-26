@@ -1,1 +1,46 @@
-<p>olvide-contrasenia works!</p>
+<!-- <ngx-spinner 
+    bdColor = "rgba(0,0,0,0.64)" 
+    size = "default" 
+    color = "#f01212" 
+    type = "ball-pulse" 
+    [fullScreen] = "true">
+</ngx-spinner> -->
+
+<body class="main-bg">
+    <div class="login-container text-c animated flipInX">
+        
+        <div class="center-block">
+            <h1 class="logo-badge text-whitesmoke">
+                <span class="fa fa-user-circle"></span>
+            </h1>
+        </div>
+
+        <!-- <h3 class="text-whitesmoke">Administradores</h3> -->
+        <p class="text-whitesmoke">Recuperacion de Contraseña</p>
+
+        <form [formGroup]="form" class="container-content">
+            <div class="margin-t">
+                <div class="form-group">
+
+                    <input formControlName="correo" name="correo" id="correo" 
+                        type="text" placeholder="Correo electronico" class="form-control">
+
+                </div>
+                <div class="form-group">
+
+                    <input formControlName="nacimiento" name="nacimiento" id="nacimiento" 
+                        type="date" placeholder="Fecha de nacimiento" class="form-control">
+
+                </div>
+                <button (click)="enviarEmail()" [disabled]="form.invalid"
+                    class="form-button button-l margin-b">
+                    Recupera
+                </button>
+            </div>
+            <p class="margin-t text-whitesmoke">
+                <a (click)="regrearInicio()">Regresar a inicio</a>
+            </p>
+        </form>
+
+    </div>
+</body>

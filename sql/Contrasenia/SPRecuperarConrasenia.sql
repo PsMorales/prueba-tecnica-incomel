@@ -19,7 +19,7 @@ BEGIN
 			WHERE 
 				estado = 1 AND
 				correo = @_correo AND
-				nacimiento = nacimiento
+				nacimiento = @_nacimiento
 			SET @_filas_afectadas = @@ROWCOUNT
 		END TRY
 

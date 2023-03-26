@@ -8,12 +8,11 @@ import { ListarUsuariosComponent } from './../../components/usuarios-manager/lis
 import { PalindromosComponent } from './../../components/palindromos/palindromos.component'
 
 export const AdminLayoutRoutes: Routes = [
-    // { path: 'dashboard',      component: HomeComponent },
-    { path: 'listar-usuarios',      component: ListarUsuariosComponent },
-    { path: 'usuarios/:id',      component: CrearUsuariosComponent },
-    { path: 'usuarios',      component: CrearUsuariosComponent },
-    { path: 'listar-empleados',      component: ListarEmpleadosComponent },
-    { path: 'empleados/:id',      component: CrearEmpleadosComponent },
-    { path: 'empleados',      component: CrearEmpleadosComponent },
-    { path: 'palindromos',      component: PalindromosComponent },
+    { path: 'listar-usuarios', component: ListarUsuariosComponent },
+    { path: 'usuarios/:id', component: CrearUsuariosComponent },
+    { path: 'usuarios', component: CrearUsuariosComponent },
+    { path: 'listar-empleados', component: ListarEmpleadosComponent },
+    { path: 'empleados/:id', component: CrearEmpleadosComponent },
+    { path: 'empleados', component: CrearEmpleadosComponent },
+    { path: 'palindromos', component: PalindromosComponent },
 ];

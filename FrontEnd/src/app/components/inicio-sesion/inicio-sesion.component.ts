@@ -16,7 +16,7 @@ export class InicioSesionComponent implements OnInit {
   hide = true;
   // afterLogin: AfterLogin;
   routerRedirect: string = "";
-  inicio= new Inicio();
+  inicio = new Inicio();
 
   constructor(
     private fb: FormBuilder,
@@ -55,5 +55,9 @@ export class InicioSesionComponent implements OnInit {
     else{
       this.sesionService.alert('warning',"Por favor completar todos los campos");
     }
+  }
+
+  olvidarContrasenia(){
+    this.router.navigate(['/recuperar']);
   }
 }

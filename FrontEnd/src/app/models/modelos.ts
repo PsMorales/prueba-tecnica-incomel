@@ -146,6 +146,21 @@ export class Inicio implements IInicio{
     }
 }
 
+export interface IRecuperar{
+    nacimiento: String;
+    correo: string;
+}
+
+export class Recuperar implements IRecuperar{
+    nacimiento: String;
+    correo: string;
+
+    constructor(){
+        this.nacimiento = '';
+        this.correo = '';
+    }
+}
+
 
 export interface IRegistroInicio{
     resultado: number;

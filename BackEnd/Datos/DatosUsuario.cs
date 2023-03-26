@@ -151,22 +151,31 @@ namespace Datos
             return Conexion.EjecutarComandoSelect(Comando);
         }
 
+        //----------------------------------------------------EmailRecuperaContrasenia-----------------------------------------------------------
         public static DataTable EmailRecuperarContrasenia(ModeloUsuario Modelo)
         {
+            DT.Clear();
+
+            string token = Funciones.GenerarTokeDeSesion();
             int vigencia = Int32.Parse(vigencia_contrasenia);
             SqlCommand Comando = Conexion.CrearComandoProc("dbo.SPRecuperarConrasenia");
-            Comando.Parameters.AddWithValue("@_id", Modelo.id);
             Comando.Parameters.AddWithValue("@_nacimiento", Modelo.nacimiento);
             Comando.Parameters.AddWithValue("@_correo", Modelo.correo);
-            Comando.Parameters.AddWithValue("@_token_contrasenia", Funciones.GenerarTokeDeSesion());
+            Comando.Parameters.AddWithValue("@_token_contrasenia", token);
             Comando.Parameters.AddWithValue("@_tiempo_token_contrasenia", vigencia);
 
-            Funciones.EnviarEmailContrasenia(Modelo.correo, vigencia);
+            DT = Conexion.EjecutarComandoSelect(Comando);
+            DT = Funciones.AgregarEstadoToken(DT, Estado.ToString());
+            if (DT.Rows.Count > 0)
+            {
+                Funciones.EnviarEmailContrasenia(Modelo.correo, vigencia, token);
+            }
 
-            return Conexion.EjecutarComandoSelect(Comando);
+            return DT;
         }
 
-        public static DataTable Cambiarcontrasenia(ModeloUsuario Modelo)
+        //----------------------------------------------------cambioContrasenia-----------------------------------------------------------
+        public static DataTable CambiarContrasenia(ModeloUsuario Modelo)
         {
             Estado = Funciones.ObtenerEstadoTokenContrasenia(Modelo.token_contrasenia);
             DT.Clear();

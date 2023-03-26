@@ -48,5 +48,19 @@ namespace Routes
         {
             return DatosUsuario.InicioDeSesion(Modelo);
         }
+
+        [HttpPost]
+        [Route("api/recupera-contrasenia")]
+        public DataTable EmailRecuperarContrasenia(ModeloUsuario Modelo)
+        {
+            return DatosUsuario.EmailRecuperarContrasenia(Modelo);
+        }
+
+        [HttpPost]
+        [Route("api/cambiar-contrasenia")]
+        public DataTable CambiarContrasenia(ModeloUsuario Modelo)
+        {
+            return DatosUsuario.CambiarContrasenia(Modelo);
+        }
     }
 }

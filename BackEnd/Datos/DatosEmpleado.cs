@@ -69,7 +69,7 @@ namespace Datos
         }
 
         //----------------------------------------------------ObtenerEmpleado-----------------------------------------------------------
-        public static DataTable ObtenerEmpleado(ModeloEmpleado Modelo)
+        public static DataTable ObtenerEmpleados(ModeloEmpleado Modelo)
         {
             Estado = Funciones.ObtenerEstadoToken(Modelo.token);
             DT.Clear();

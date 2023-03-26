@@ -125,7 +125,7 @@ namespace Datos
             // 0 expirado, 1 vigente
             if (Estado == 1)
             {
-                SqlCommand Comando = Conexion.CrearComandoProc("dbo.SPEliminarUsuario");
+                SqlCommand Comando = Conexion.CrearComandoProc("dbo.SPEliminarUsuarios");
                 Comando.Parameters.AddWithValue("@_id", Modelo.id);
 
                 DT = Conexion.EjecutarComandoSelect(Comando);

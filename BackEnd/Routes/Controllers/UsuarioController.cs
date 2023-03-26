@@ -29,7 +29,7 @@ namespace Routes
         }
 
         [HttpPost]
-        [Route("api/obtener-datosUsuario")]
+        [Route("api/obtener-datos-usuario")]
         public DataTable ObtenerDatosUsuario(ModeloUsuario Modelo)
         {
             return DatosUsuario.ObtenerDatosUsuario(Modelo);

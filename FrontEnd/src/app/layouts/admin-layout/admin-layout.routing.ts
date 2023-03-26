@@ -11,7 +11,9 @@ export const AdminLayoutRoutes: Routes = [
     // { path: 'dashboard',      component: HomeComponent },
     { path: 'listar-usuarios',      component: ListarUsuariosComponent },
     { path: 'usuarios/:id',      component: CrearUsuariosComponent },
+    { path: 'usuarios',      component: CrearUsuariosComponent },
     { path: 'listar-empleados',      component: ListarEmpleadosComponent },
     { path: 'empleados/:id',      component: CrearEmpleadosComponent },
+    { path: 'empleados',      component: CrearEmpleadosComponent },
     { path: 'palindromos',      component: PalindromosComponent },
 ];

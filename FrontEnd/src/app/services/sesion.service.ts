@@ -44,7 +44,7 @@ export class SesionService {
     return this.HttpClient.post<Array<RegistroInicio>>(url, inicio); 
   }
 
-  getToken(){
+  getToken(): RegistroInicio{
     return JSON.parse(sessionStorage.getItem("DatosUsuario"));
   }
 

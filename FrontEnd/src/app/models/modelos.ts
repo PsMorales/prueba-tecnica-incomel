@@ -13,6 +13,7 @@ export interface IUsuario {
     agregado_token_contrasenia: string;
     tiempo_token_contrasenia: number;
     esado: string;
+    token: string;
 }
 
 export class Usuario implements IUsuario{
@@ -30,6 +31,7 @@ export class Usuario implements IUsuario{
     agregado_token_contrasenia: string;
     tiempo_token_contrasenia: number;
     esado: string;
+    token: string;
 
     constructor(usuario: Usuario){
         if(usuario){
@@ -63,6 +65,7 @@ export class Usuario implements IUsuario{
             this.agregado_token_contrasenia = null;
             this.tiempo_token_contrasenia = null;
             this.esado = null;
+            this.token = null;
         }
     }
 }
@@ -79,6 +82,7 @@ export interface IEmpleado{
     agregado_el: string;
     modificado_el: string;
     estado: string;
+    token: string;
 }
 
 export class Empleado implements IEmpleado{
@@ -93,6 +97,7 @@ export class Empleado implements IEmpleado{
     agregado_el: string;
     modificado_el: string;
     estado: string;
+    token: string;
 
     constructor(empleado: Empleado){
         if(empleado){
@@ -120,6 +125,7 @@ export class Empleado implements IEmpleado{
             this.agregado_el = null;
             this.modificado_el = null;
             this.estado = null;
+            this.token = null;
 
         }
     }

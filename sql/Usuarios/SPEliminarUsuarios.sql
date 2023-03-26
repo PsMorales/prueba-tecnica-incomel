@@ -1,4 +1,4 @@
-CREATE PROC dbo.SPEliminarUsuarios(@_id INT)
+CREATE PROC dbo.SPEliminarUsuarios(@_id NVARCHAR(40))
 AS
 DECLARE @_filas_afectadas TINYINT,
 		@_resultado INT

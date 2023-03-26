@@ -1,3 +1,6 @@
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { A11yModule } from '@angular/cdk/a11y';
 import { CommonModule } from '@angular/common';
@@ -78,6 +81,9 @@ import { MatChipsModule } from '@angular/material/chips';
     ScrollingModule,
     MatExpansionModule,
     MatChipsModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatFormFieldModule,
   ]
 })
 export class MaterialModule { }

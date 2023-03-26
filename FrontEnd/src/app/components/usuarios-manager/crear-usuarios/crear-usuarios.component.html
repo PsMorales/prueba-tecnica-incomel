@@ -1,1 +1,99 @@
-<p>crear-usuarios works!</p>
+<div class="formulario">
+    <div class="main-content" >
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="">
+
+                        <div class="header" *ngIf="usuario_id">
+                            <h4 class="title">Actualizar Usuario {{ usuario.usuario }}</h4>
+                        </div>
+                        <div class="header" *ngIf="!usuario_id">
+                            <h4 class="title">Agregar nuevo usuario</h4>
+                        </div>
+
+                    </div>
+                    <form [formGroup]="form" class="content">
+
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <mat-form-field appearance="fill" class="input">
+                                        <mat-label>Nombe</mat-label>
+                                        <input matInput formControlName="nombre" name="nombre" id="nombre" 
+                                            type="text" placeholder="Nombre Completo" required>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <mat-form-field appearance="fill" class="input">
+                                        <mat-label>Usuario</mat-label>
+                                        <input matInput formControlName="usuario" name="usuario" id="usuario" 
+                                            type="text" placeholder="Usuario" required>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <mat-form-field appearance="fill" class="input">
+                                        <mat-label>Fecha de Nacimiento</mat-label>
+                                        <input matInput [matDatepicker]="pickerFechaNacimieno" formControlName="nacimiento" name="nacimiento" id="nacimiento" 
+                                            type="text" placeholder="Fecha de Nacimiento" required>
+                                        <mat-datepicker-toggle matSuffix [for]="pickerFechaNacimieno"></mat-datepicker-toggle>
+                                        <mat-datepicker #pickerFechaNacimieno></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" *ngIf="!usuario_id">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <mat-form-field appearance="fill" class="input">
+                                        <mat-label>Correo</mat-label>
+                                        <input matInput formControlName="correo" name="correo" id="correo" 
+                                            type="text" placeholder="Correo electronico" required>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <mat-form-field appearance="fill" class="input">
+                                        <mat-label>Contraseña</mat-label>
+                                        <input matInput formControlName="contasenia" name="contasenia" id="contasenia"
+                                            [type]="hide ? 'password' : 'text'" placeholder="Contraseña" required>
+                                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                        </button>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" *ngIf="usuario_id">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <mat-form-field appearance="fill" class="input">
+                                        <mat-label>Correo</mat-label>
+                                        <input matInput formControlName="correo" name="correo" id="correo" 
+                                            type="text" placeholder="Correo electronico" required>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-info btn-fill pull-right" (click)="enviarFormulario()">
+                            <i class="fas fa-upload"></i>
+                            Guardar
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -42,7 +42,7 @@ namespace Datos
 
         public static int ObtenerEstadoToken(string token)
         {
-            SqlCommand Comando = Conexion.CrearComandoProc("Sesion.SPObtenerEstadoToken");
+            SqlCommand Comando = Conexion.CrearComandoProc("dbo.SPObtenerEstadoToken");
             Comando.Parameters.AddWithValue("@_token", token);
 
             DT.Reset();
@@ -54,7 +54,7 @@ namespace Datos
 
         public static int ObtenerEstadoTokenContrasenia(string token)
         {
-            SqlCommand Comando = Conexion.CrearComandoProc("Sesion.FnVerificarVigenciaTokenContrasenia");
+            SqlCommand Comando = Conexion.CrearComandoProc("dbo.FnVerificarVigenciaTokenContrasenia");
             Comando.Parameters.AddWithValue("@_token_contrasenia", token);
 
             DT.Reset();
@@ -68,7 +68,7 @@ namespace Datos
         {
             if (DT.Rows.Count > 0)
             {
-                DT.Columns.Add("estado", typeof(string), Estado).SetOrdinal(0);
+                //DT.Columns.Add("estado", typeof(string), Estado).SetOrdinal(0);
             }
             else
             {
